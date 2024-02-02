@@ -10,7 +10,6 @@ const NewProduct = () => {
                     <h2 className="text-2xl font-bold tracking-tight text-gray-900">
                         Our Newest products
                     </h2>
-
                     <Link className="text-primary flex items-center gap-x-1" href="/all">
                         See All{" "}
                         <span>
@@ -18,6 +17,7 @@ const NewProduct = () => {
                         </span>
                     </Link>
                 </div>
+
             </div>
         </div>
     )
