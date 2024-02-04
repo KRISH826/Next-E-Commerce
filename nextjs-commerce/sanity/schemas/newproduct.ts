@@ -1,8 +1,7 @@
-// schemas/pet.js
 export default {
-  name: 'products',
+  name: 'newproduct',
   type: 'document',
-  title: 'Products',
+  title: 'New Products',
   fields: [
     {
       name: 'name',
@@ -19,6 +18,11 @@ export default {
       name: 'description',
       type: 'text',
       title: 'Product Details',
+    },
+    {
+      name: 'shortdescription',
+      type: 'string',
+      title: 'Product Short Description',
     },
     {
       name: 'slug',
