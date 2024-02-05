@@ -1,4 +1,5 @@
-"use client";
+
+import AddToCart from '@/app/components/AddToCart';
 import ImageGallery from '@/app/components/ImageGallery';
 import { fullProduct } from '@/app/interface';
 import { client } from '@/app/lib/sanity'
@@ -60,6 +61,10 @@ const page = async ({ params }: { params: { slug: string } }) => {
                         <div className="mb-6 flex items-center gap-2 text-gray-500">
                             <Truck className="w-6 h-6" />
                             <span className="text-sm">2-4 Day Shipping</span>
+                        </div>
+                        <div className='flex gap-2'>
+                            <AddToCart id={data._id} currency='USD' name={data.name} price={data.price} description={data.description} image={data.images[0]} />
+                            <Button variant="secondary">Checkout Now</Button>
                         </div>
                         <p className="mt-12 text-base text-gray-500 tracking-wide">
                             {data.description}

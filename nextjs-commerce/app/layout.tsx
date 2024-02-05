@@ -3,6 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"
+import CartProvider from "./components/Provider";
+import ShoppingCartModal from "./components/ShoppingCartModal";
+import { Suspense } from "react";
+import Loading from "./components/Loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          <ShoppingCartModal />
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

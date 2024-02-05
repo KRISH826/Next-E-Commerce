@@ -20,3 +20,13 @@ export interface fullProduct {
   description: string;
   price_id: string;
 }
+
+export interface categoryProduct {
+  _id: string;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+  slug: string;
+  categoryName: string;
+}
