@@ -8,11 +8,11 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import dynamic from "next/dynamic";
+
 import Image from "next/image";
 import { useShoppingCart } from "use-shopping-cart";
 
-function ShoppingCartModal() {
+export default function ShoppingCartModal() {
   const {
     cartCount,
     shouldDisplayCart,
@@ -20,6 +20,7 @@ function ShoppingCartModal() {
     cartDetails,
     removeItem,
     totalPrice,
+    redirectToCheckout,
   } = useShoppingCart();
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
@@ -27,6 +28,7 @@ function ShoppingCartModal() {
         <SheetHeader>
           <SheetTitle>Shopping Cart</SheetTitle>
         </SheetHeader>
+
         <div className='h-full flex flex-col justify-between'>
           <div className='mt-8 flex-1 overflow-y-auto'>
             <ul className='-my-6 divide-y divide-gray-200'>
@@ -105,7 +107,3 @@ function ShoppingCartModal() {
     </Sheet>
   );
 }
-
-export default dynamic(() => Promise.resolve(ShoppingCartModal), {
-  ssr: false,
-});

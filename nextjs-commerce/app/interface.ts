@@ -2,7 +2,7 @@
 
 export interface simplifiedProduct {
   _id: string;
-  image: string;
+  imageUrl: string;
   price: number;
   slug: string;
   shortdescription: string;
